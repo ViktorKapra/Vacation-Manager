@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\NP\\Софтуерно_инженерство\\VacationManager\\VacationManager\\VacationManager.csproj": {}
+    "C:\\Users\\vikto\\Source\\Repos\\Vacation-Manager\\VacationManager\\VacationManager\\VacationManager.csproj": {}
   },
   "projects": {
-    "D:\\NP\\Софтуерно_инженерство\\VacationManager\\VacationManager\\VacationManager.csproj": {
+    "C:\\Users\\vikto\\Source\\Repos\\Vacation-Manager\\VacationManager\\VacationManager\\VacationManager.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\NP\\Софтуерно_инженерство\\VacationManager\\VacationManager\\VacationManager.csproj",
+        "projectUniqueName": "C:\\Users\\vikto\\Source\\Repos\\Vacation-Manager\\VacationManager\\VacationManager\\VacationManager.csproj",
         "projectName": "VacationManager",
-        "projectPath": "D:\\NP\\Софтуерно_инженерство\\VacationManager\\VacationManager\\VacationManager.csproj",
+        "projectPath": "C:\\Users\\vikto\\Source\\Repos\\Vacation-Manager\\VacationManager\\VacationManager\\VacationManager.csproj",
         "packagesPath": "C:\\Users\\vikto\\.nuget\\packages\\",
-        "outputPath": "D:\\NP\\Софтуерно_инженерство\\VacationManager\\VacationManager\\obj\\",
+        "outputPath": "C:\\Users\\vikto\\Source\\Repos\\Vacation-Manager\\VacationManager\\VacationManager\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\vikto\\AppData\\Roaming\\NuGet\\NuGet.Config",
