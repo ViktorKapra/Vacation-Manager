@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\vikto\\Source\\Repos\\Vacation-Manager\\VacationManager\\VacationManager\\VacationManager.csproj": {}
+    "C:\\Users\\vikto\\source\\repos\\Vacation-Manager\\Vacation-Manager\\VacationManager\\VacationManager\\VacationManager.csproj": {}
   },
   "projects": {
-    "C:\\Users\\vikto\\Source\\Repos\\Vacation-Manager\\VacationManager\\VacationManager\\VacationManager.csproj": {
+    "C:\\Users\\vikto\\source\\repos\\Vacation-Manager\\Vacation-Manager\\VacationManager\\VacationManager\\VacationManager.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\vikto\\Source\\Repos\\Vacation-Manager\\VacationManager\\VacationManager\\VacationManager.csproj",
+        "projectUniqueName": "C:\\Users\\vikto\\source\\repos\\Vacation-Manager\\Vacation-Manager\\VacationManager\\VacationManager\\VacationManager.csproj",
         "projectName": "VacationManager",
-        "projectPath": "C:\\Users\\vikto\\Source\\Repos\\Vacation-Manager\\VacationManager\\VacationManager\\VacationManager.csproj",
+        "projectPath": "C:\\Users\\vikto\\source\\repos\\Vacation-Manager\\Vacation-Manager\\VacationManager\\VacationManager\\VacationManager.csproj",
         "packagesPath": "C:\\Users\\vikto\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\vikto\\Source\\Repos\\Vacation-Manager\\VacationManager\\VacationManager\\obj\\",
+        "outputPath": "C:\\Users\\vikto\\source\\repos\\Vacation-Manager\\Vacation-Manager\\VacationManager\\VacationManager\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\vikto\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -40,6 +40,24 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.4, )"
+            },
+            "Microsoft.AspNetCore.Identity.UI": {
+              "target": "Package",
+              "version": "[5.0.4, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.4, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.4, )"
+            },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
               "version": "[5.0.2, )"

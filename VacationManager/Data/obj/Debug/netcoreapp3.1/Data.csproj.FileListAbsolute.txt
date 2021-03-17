@@ -1,0 +1,12 @@
+C:\Users\vikto\source\repos\Vacation-Manager\Vacation-Manager\VacationManager\Data\bin\Debug\netcoreapp3.1\Data.deps.json
+C:\Users\vikto\source\repos\Vacation-Manager\Vacation-Manager\VacationManager\Data\bin\Debug\netcoreapp3.1\Data.runtimeconfig.json
+C:\Users\vikto\source\repos\Vacation-Manager\Vacation-Manager\VacationManager\Data\bin\Debug\netcoreapp3.1\Data.runtimeconfig.dev.json
+C:\Users\vikto\source\repos\Vacation-Manager\Vacation-Manager\VacationManager\Data\bin\Debug\netcoreapp3.1\Data.dll
+C:\Users\vikto\source\repos\Vacation-Manager\Vacation-Manager\VacationManager\Data\bin\Debug\netcoreapp3.1\Data.pdb
+C:\Users\vikto\source\repos\Vacation-Manager\Vacation-Manager\VacationManager\Data\obj\Debug\netcoreapp3.1\Data.csprojAssemblyReference.cache
+C:\Users\vikto\source\repos\Vacation-Manager\Vacation-Manager\VacationManager\Data\obj\Debug\netcoreapp3.1\Data.AssemblyInfoInputs.cache
+C:\Users\vikto\source\repos\Vacation-Manager\Vacation-Manager\VacationManager\Data\obj\Debug\netcoreapp3.1\Data.AssemblyInfo.cs
+C:\Users\vikto\source\repos\Vacation-Manager\Vacation-Manager\VacationManager\Data\obj\Debug\netcoreapp3.1\Data.csproj.CoreCompileInputs.cache
+C:\Users\vikto\source\repos\Vacation-Manager\Vacation-Manager\VacationManager\Data\obj\Debug\netcoreapp3.1\Data.dll
+C:\Users\vikto\source\repos\Vacation-Manager\Vacation-Manager\VacationManager\Data\obj\Debug\netcoreapp3.1\Data.pdb
+C:\Users\vikto\source\repos\Vacation-Manager\Vacation-Manager\VacationManager\Data\obj\Debug\netcoreapp3.1\Data.genruntimeconfig.cache
