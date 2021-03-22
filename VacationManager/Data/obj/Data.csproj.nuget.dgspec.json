@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\vikto\\source\\repos\\Vacation-Manager\\Vacation-Manager\\VacationManager\\Data\\Data.csproj": {}
+    "C:\\Users\\vikto\\source\\repos\\Vacation-Manager\\Vacation-Manager\\Vacation-Manager\\VacationManager\\Data\\Data.csproj": {}
   },
   "projects": {
-    "C:\\Users\\vikto\\source\\repos\\Vacation-Manager\\Vacation-Manager\\VacationManager\\Data\\Data.csproj": {
+    "C:\\Users\\vikto\\source\\repos\\Vacation-Manager\\Vacation-Manager\\Vacation-Manager\\VacationManager\\Data\\Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\vikto\\source\\repos\\Vacation-Manager\\Vacation-Manager\\VacationManager\\Data\\Data.csproj",
+        "projectUniqueName": "C:\\Users\\vikto\\source\\repos\\Vacation-Manager\\Vacation-Manager\\Vacation-Manager\\VacationManager\\Data\\Data.csproj",
         "projectName": "Data",
-        "projectPath": "C:\\Users\\vikto\\source\\repos\\Vacation-Manager\\Vacation-Manager\\VacationManager\\Data\\Data.csproj",
+        "projectPath": "C:\\Users\\vikto\\source\\repos\\Vacation-Manager\\Vacation-Manager\\Vacation-Manager\\VacationManager\\Data\\Data.csproj",
         "packagesPath": "C:\\Users\\vikto\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\vikto\\source\\repos\\Vacation-Manager\\Vacation-Manager\\VacationManager\\Data\\obj\\",
+        "outputPath": "C:\\Users\\vikto\\source\\repos\\Vacation-Manager\\Vacation-Manager\\Vacation-Manager\\VacationManager\\Data\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\vikto\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -41,6 +41,20 @@
           "targetAlias": "netcoreapp3.1",
           "dependencies": {
             "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.4, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.4, )"
+            },
+            "Microsoft.EntityFrameworkCore.Proxies": {
+              "target": "Package",
+              "version": "[5.0.4, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
               "version": "[5.0.4, )"
             },
