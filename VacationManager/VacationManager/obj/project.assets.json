@@ -9301,11 +9301,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\vikto\\source\\repos\\Vacation-Manager\\Vacation-Manager\\Vacation-Manager\\VacationManager\\VacationManager\\VacationManager.csproj",
+      "projectUniqueName": "C:\\Users\\vikto\\source\\repos\\Vacation-Manager\\Vacation-Manager\\VacationManager\\VacationManager\\VacationManager.csproj",
       "projectName": "VacationManager",
-      "projectPath": "C:\\Users\\vikto\\source\\repos\\Vacation-Manager\\Vacation-Manager\\Vacation-Manager\\VacationManager\\VacationManager\\VacationManager.csproj",
+      "projectPath": "C:\\Users\\vikto\\source\\repos\\Vacation-Manager\\Vacation-Manager\\VacationManager\\VacationManager\\VacationManager.csproj",
       "packagesPath": "C:\\Users\\vikto\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\vikto\\source\\repos\\Vacation-Manager\\Vacation-Manager\\Vacation-Manager\\VacationManager\\VacationManager\\obj\\",
+      "outputPath": "C:\\Users\\vikto\\source\\repos\\Vacation-Manager\\Vacation-Manager\\VacationManager\\VacationManager\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\vikto\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -9322,8 +9322,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Users\\vikto\\source\\repos\\Vacation-Manager\\Vacation-Manager\\Vacation-Manager\\VacationManager\\Data\\Data.csproj": {
-              "projectPath": "C:\\Users\\vikto\\source\\repos\\Vacation-Manager\\Vacation-Manager\\Vacation-Manager\\VacationManager\\Data\\Data.csproj"
+            "C:\\Users\\vikto\\source\\repos\\Vacation-Manager\\Vacation-Manager\\VacationManager\\Data\\Data.csproj": {
+              "projectPath": "C:\\Users\\vikto\\source\\repos\\Vacation-Manager\\Vacation-Manager\\VacationManager\\Data\\Data.csproj"
             }
           }
         }

@@ -7450,11 +7450,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\vikto\\source\\repos\\Vacation-Manager\\Vacation-Manager\\Vacation-Manager\\VacationManager\\Data\\Data.csproj",
+      "projectUniqueName": "C:\\Users\\vikto\\source\\repos\\Vacation-Manager\\Vacation-Manager\\VacationManager\\Data\\Data.csproj",
       "projectName": "Data",
-      "projectPath": "C:\\Users\\vikto\\source\\repos\\Vacation-Manager\\Vacation-Manager\\Vacation-Manager\\VacationManager\\Data\\Data.csproj",
+      "projectPath": "C:\\Users\\vikto\\source\\repos\\Vacation-Manager\\Vacation-Manager\\VacationManager\\Data\\Data.csproj",
       "packagesPath": "C:\\Users\\vikto\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\vikto\\source\\repos\\Vacation-Manager\\Vacation-Manager\\Vacation-Manager\\VacationManager\\Data\\obj\\",
+      "outputPath": "C:\\Users\\vikto\\source\\repos\\Vacation-Manager\\Vacation-Manager\\VacationManager\\Data\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\vikto\\AppData\\Roaming\\NuGet\\NuGet.Config",

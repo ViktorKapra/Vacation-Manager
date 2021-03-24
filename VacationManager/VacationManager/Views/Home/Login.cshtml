@@ -5,24 +5,33 @@
 <div class="text-center">
 <h1>Login</h1>
 
-    <div class="text-center">
-        <!-- Outer Row -->
-                <div class="border-primary rounded" style=" ">      
-                    <div class=" border border-success" style="height: 250px; width: 350px; margin:auto" >
-                        <dl class="text-center" style="padding: 30px 10px 10px 10px" >
-                            <dt class="m-4 " style="font-size:x-large">
-                            <input type="text" placeholder="username">
-                            </dt>
-                            <dt class="m-4 " style="font-size:x-large">
-                            <input type="password" placeholder="password">
-                            </dt>
-                           <dt class="m-4 " style="font-size:x-large">
-                            <input type="submit">
-                           </dt>
-
-                        </dl>
-    
-                    </div>
+<div id="login">
+    <h3 class="text-center text-white pt-5">Login form</h3>
+    <div class="container">
+        <div id="login-row" class="row justify-content-center align-items-center">
+            <div id="login-column" class="col-md-6">
+                <div id="login-box" class="col-md-12">
+                    <form id="login-form" class="form" action="" method="post">
+                        <h3 class="text-center text-info">Login</h3>
+                        <div class="form-group">
+                            <label for="username" class="text-info">Username:</label><br>
+                            <input type="text" name="username" id="username" class="form-control" placeholder="username">
+                        </div>
+                        <div class="form-group">
+                            <label for="password" class="text-info">Password:</label><br>
+                            <input type="password" name="password" id="password" class="form-control" placeholder="password">
+                        </div>
+                        <div class="form-group">
+                            <label for="remember-me" class="text-info"><span>Remember me</span> <span><input id="remember-me" name="remember-me" type="checkbox"></span></label><br>
+                            <input type="submit" name="submit" class="btn btn-info btn-md" value="submit">
+                        </div>
+                        <div id="register-link" class="text-right">
+                            <a asp-controller="Home" asp-action="Registration" target="_self" class="text-info">Registration</a>
+                        </div>
+                    </form>
                 </div>
+            </div>
+        </div>
     </div>
 </div>
+

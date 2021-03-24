@@ -217,7 +217,6 @@ C:\Users\vikto\source\repos\Vacation-Manager\Vacation-Manager\VacationManager\Va
 C:\Users\vikto\source\repos\Vacation-Manager\Vacation-Manager\VacationManager\VacationManager\obj\Debug\net5.0\VacationManager.TagHelpers.output.cache
 C:\Users\vikto\source\repos\Vacation-Manager\Vacation-Manager\VacationManager\VacationManager\obj\Debug\net5.0\VacationManager.RazorCoreGenerate.cache
 C:\Users\vikto\source\repos\Vacation-Manager\Vacation-Manager\VacationManager\VacationManager\obj\Debug\net5.0\Razor\Views\Home\Index.cshtml.g.cs
-C:\Users\vikto\source\repos\Vacation-Manager\Vacation-Manager\VacationManager\VacationManager\obj\Debug\net5.0\Razor\Views\Home\Login.cshtml.g.cs
 C:\Users\vikto\source\repos\Vacation-Manager\Vacation-Manager\VacationManager\VacationManager\obj\Debug\net5.0\Razor\Views\Home\Privacy.cshtml.g.cs
 C:\Users\vikto\source\repos\Vacation-Manager\Vacation-Manager\VacationManager\VacationManager\obj\Debug\net5.0\Razor\Views\Shared\Error.cshtml.g.cs
 C:\Users\vikto\source\repos\Vacation-Manager\Vacation-Manager\VacationManager\VacationManager\obj\Debug\net5.0\Razor\Views\Shared\_Layout.cshtml.g.cs
@@ -447,3 +446,7 @@ C:\Users\vikto\source\repos\Vacation-Manager\Vacation-Manager\Vacation-Manager\V
 C:\Users\vikto\source\repos\Vacation-Manager\Vacation-Manager\Vacation-Manager\VacationManager\VacationManager\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Proxies.dll
 C:\Users\vikto\source\repos\Vacation-Manager\Vacation-Manager\Vacation-Manager\VacationManager\VacationManager\bin\Debug\net5.0\Data.dll
 C:\Users\vikto\source\repos\Vacation-Manager\Vacation-Manager\Vacation-Manager\VacationManager\VacationManager\bin\Debug\net5.0\Data.pdb
+C:\Users\vikto\source\repos\Vacation-Manager\Vacation-Manager\VacationManager\VacationManager\bin\Debug\net5.0\Castle.Core.dll
+C:\Users\vikto\source\repos\Vacation-Manager\Vacation-Manager\VacationManager\VacationManager\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Proxies.dll
+C:\Users\vikto\source\repos\Vacation-Manager\Vacation-Manager\VacationManager\VacationManager\bin\Debug\net5.0\Data.dll
+C:\Users\vikto\source\repos\Vacation-Manager\Vacation-Manager\VacationManager\VacationManager\bin\Debug\net5.0\Data.pdb

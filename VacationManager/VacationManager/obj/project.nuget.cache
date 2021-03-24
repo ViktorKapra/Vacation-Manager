@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "hjy3y7Wpg6kBKy9sRFN7VdIjbut2Snx/u0OM/nJk9YT6DwdndF4aeRx2kUcf4LaZGE5pV7P/gYp5hcmkaT8iYQ==",
+  "dgSpecHash": "uW5zUPmpEGfVmdrnjZyaANcF8Cc8QB4iLq5HVWZmdVi8MuUQKGyrJT36uyXdR3dQk4oeSwPUB0OXSfXM/SmLwA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\vikto\\source\\repos\\Vacation-Manager\\Vacation-Manager\\Vacation-Manager\\VacationManager\\VacationManager\\VacationManager.csproj",
+  "projectFilePath": "C:\\Users\\vikto\\source\\repos\\Vacation-Manager\\Vacation-Manager\\VacationManager\\VacationManager\\VacationManager.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\vikto\\.nuget\\packages\\castle.core\\4.4.1\\castle.core.4.4.1.nupkg.sha512",
     "C:\\Users\\vikto\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
