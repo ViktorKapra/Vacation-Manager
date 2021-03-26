@@ -450,3 +450,4 @@ C:\Users\vikto\source\repos\Vacation-Manager\Vacation-Manager\VacationManager\Va
 C:\Users\vikto\source\repos\Vacation-Manager\Vacation-Manager\VacationManager\VacationManager\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Proxies.dll
 C:\Users\vikto\source\repos\Vacation-Manager\Vacation-Manager\VacationManager\VacationManager\bin\Debug\net5.0\Data.dll
 C:\Users\vikto\source\repos\Vacation-Manager\Vacation-Manager\VacationManager\VacationManager\bin\Debug\net5.0\Data.pdb
+C:\Users\vikto\source\repos\Vacation-Manager\Vacation-Manager\VacationManager\VacationManager\obj\Debug\net5.0\Razor\Views\Home\Registration.cshtml.g.cs

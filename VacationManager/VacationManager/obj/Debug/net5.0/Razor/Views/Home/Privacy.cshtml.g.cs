@@ -26,8 +26,36 @@ using VacationManager.Models;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 4 "C:\Users\vikto\source\repos\Vacation-Manager\Vacation-Manager\VacationManager\VacationManager\Views\_ViewImports.cshtml"
+using Microsoft.AspNetCore.Identity;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 5 "C:\Users\vikto\source\repos\Vacation-Manager\Vacation-Manager\VacationManager\VacationManager\Views\_ViewImports.cshtml"
+using VacationManager.Areas.Identity;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 6 "C:\Users\vikto\source\repos\Vacation-Manager\Vacation-Manager\VacationManager\VacationManager\Views\_ViewImports.cshtml"
+using VacationManager.Areas.Identity.Pages;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 7 "C:\Users\vikto\source\repos\Vacation-Manager\Vacation-Manager\VacationManager\VacationManager\Views\_ViewImports.cshtml"
+using VacationManager.Areas.Identity.Data;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"d8ddb6bffa5a9b264bf8f89038bf03c234083fd3", @"/Views/Home/Privacy.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"3b593b3f0e5abb58450caa2dbe88a3b293178197", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"e3917cc932737f6dbde9a9021f32cd8887a8aa0d", @"/Views/_ViewImports.cshtml")]
     public class Views_Home_Privacy : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         #pragma warning disable 1998
