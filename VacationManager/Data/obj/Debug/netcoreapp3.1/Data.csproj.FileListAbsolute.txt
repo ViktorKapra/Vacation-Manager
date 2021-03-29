@@ -22,3 +22,15 @@ C:\Users\vikto\source\repos\Vacation-Manager\Vacation-Manager\Vacation-Manager\V
 C:\Users\vikto\source\repos\Vacation-Manager\Vacation-Manager\Vacation-Manager\VacationManager\Data\obj\Debug\netcoreapp3.1\Data.dll
 C:\Users\vikto\source\repos\Vacation-Manager\Vacation-Manager\Vacation-Manager\VacationManager\Data\obj\Debug\netcoreapp3.1\Data.pdb
 C:\Users\vikto\source\repos\Vacation-Manager\Vacation-Manager\Vacation-Manager\VacationManager\Data\obj\Debug\netcoreapp3.1\Data.genruntimeconfig.cache
+C:\Users\иван\Desktop\viii\Vacation-Manager\VacationManager\Data\bin\Debug\netcoreapp3.1\Data.deps.json
+C:\Users\иван\Desktop\viii\Vacation-Manager\VacationManager\Data\bin\Debug\netcoreapp3.1\Data.runtimeconfig.json
+C:\Users\иван\Desktop\viii\Vacation-Manager\VacationManager\Data\bin\Debug\netcoreapp3.1\Data.runtimeconfig.dev.json
+C:\Users\иван\Desktop\viii\Vacation-Manager\VacationManager\Data\bin\Debug\netcoreapp3.1\Data.dll
+C:\Users\иван\Desktop\viii\Vacation-Manager\VacationManager\Data\bin\Debug\netcoreapp3.1\Data.pdb
+C:\Users\иван\Desktop\viii\Vacation-Manager\VacationManager\Data\obj\Debug\netcoreapp3.1\Data.csprojAssemblyReference.cache
+C:\Users\иван\Desktop\viii\Vacation-Manager\VacationManager\Data\obj\Debug\netcoreapp3.1\Data.AssemblyInfoInputs.cache
+C:\Users\иван\Desktop\viii\Vacation-Manager\VacationManager\Data\obj\Debug\netcoreapp3.1\Data.AssemblyInfo.cs
+C:\Users\иван\Desktop\viii\Vacation-Manager\VacationManager\Data\obj\Debug\netcoreapp3.1\Data.csproj.CoreCompileInputs.cache
+C:\Users\иван\Desktop\viii\Vacation-Manager\VacationManager\Data\obj\Debug\netcoreapp3.1\Data.dll
+C:\Users\иван\Desktop\viii\Vacation-Manager\VacationManager\Data\obj\Debug\netcoreapp3.1\Data.pdb
+C:\Users\иван\Desktop\viii\Vacation-Manager\VacationManager\Data\obj\Debug\netcoreapp3.1\Data.genruntimeconfig.cache

@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\vikto\\source\\repos\\Vacation-Manager\\Vacation-Manager\\VacationManager\\Data\\Data.csproj": {}
+    "C:\\Users\\иван\\Desktop\\viii\\Vacation-Manager\\VacationManager\\Data\\Data.csproj": {}
   },
   "projects": {
-    "C:\\Users\\vikto\\source\\repos\\Vacation-Manager\\Vacation-Manager\\VacationManager\\Data\\Data.csproj": {
+    "C:\\Users\\иван\\Desktop\\viii\\Vacation-Manager\\VacationManager\\Data\\Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\vikto\\source\\repos\\Vacation-Manager\\Vacation-Manager\\VacationManager\\Data\\Data.csproj",
+        "projectUniqueName": "C:\\Users\\иван\\Desktop\\viii\\Vacation-Manager\\VacationManager\\Data\\Data.csproj",
         "projectName": "Data",
-        "projectPath": "C:\\Users\\vikto\\source\\repos\\Vacation-Manager\\Vacation-Manager\\VacationManager\\Data\\Data.csproj",
-        "packagesPath": "C:\\Users\\vikto\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\vikto\\source\\repos\\Vacation-Manager\\Vacation-Manager\\VacationManager\\Data\\obj\\",
+        "projectPath": "C:\\Users\\иван\\Desktop\\viii\\Vacation-Manager\\VacationManager\\Data\\Data.csproj",
+        "packagesPath": "C:\\Users\\иван\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\иван\\Desktop\\viii\\Vacation-Manager\\VacationManager\\Data\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\vikto\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\иван\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -80,7 +80,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
         }
       }
     }
