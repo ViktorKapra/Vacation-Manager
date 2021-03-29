@@ -10,7 +10,7 @@ namespace Data.Entity
     {
 
         [MaxLength(100), Required]
-        public string Userame { get; set; }
+        public string UserName { get; set; }
         [MaxLength(100), Required]
         public string Password { get; set; }
         [MaxLength(100), Required]
