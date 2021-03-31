@@ -85,8 +85,8 @@ namespace VacationManager.Controllers
             {
                 return NotFound();
             }
-            ViewData["ProjectId"] = new SelectList(_context.Projects, "Id", "Id", team.ProjectId);
-            ViewData["TeamLeaderId"] = new SelectList(_context.Users, "Id", "FirstName", team.TeamLeaderId);
+            ViewData["ProjectId"] = new SelectList(_context.Projects, "Id", "Name", team.ProjectId);
+            ViewData["TeamLeaders"] = new SelectList(_context.Users, "Id", "FirstName", team.TeamLeaderId);
             return View(team);
         }
 

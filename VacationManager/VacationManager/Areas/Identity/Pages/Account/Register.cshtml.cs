@@ -14,6 +14,8 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Extensions.Logging;
 using VacationManager.Areas.Identity.Data;
+using Data.Entity;
+using Data;
 
 namespace VacationManager.Areas.Identity.Pages.Account
 {
@@ -78,7 +80,18 @@ namespace VacationManager.Areas.Identity.Pages.Account
             ReturnUrl = returnUrl;
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
         }
-
+        public  void AddUserToVMContext(InputModel user)
+        {
+            VacationManagerContext _context = new VacationManagerContext();
+            _context.Users.Add(new User
+            {
+                UserName = user.Email,
+                Password = user.Password,
+                FirstName = Input.FirstName,
+                LastName = Input.LirstName
+            });
+            _context.SaveChanges();
+        }
         public async Task<IActionResult> OnPostAsync(string returnUrl = null)
         {
             returnUrl = returnUrl ?? Url.Content("~/");
@@ -89,6 +102,7 @@ namespace VacationManager.Areas.Identity.Pages.Account
                 var result = await _userManager.CreateAsync(user, Input.Password);
                 if (result.Succeeded)
                 {
+                    AddUserToVMContext(Input);
                     _logger.LogInformation("User created a new account with password.");
 
                     var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
