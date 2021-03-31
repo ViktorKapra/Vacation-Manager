@@ -42,8 +42,14 @@ namespace VacationManager.Controllers
             {
                 return NotFound();
             }
+            List<string> developersNames = team.Developers.Select(dev => dev.FirstName).ToList();
+            if (developersNames != null)
+            {
+                ViewBag.DevelopersNames = developersNames; 
+            }
 
-            return View(team);
+                return View(team);
+           
         }
 
         // GET: Teams/Create
