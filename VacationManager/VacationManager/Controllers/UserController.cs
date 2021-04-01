@@ -65,7 +65,7 @@ namespace VacationManager.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["TeamId"] = new SelectList(_context.Teams, "Id", "Id", user.TeamId);
+            ViewData["TeamId"] = new SelectList(_context.Teams, "Name", "Id", user.TeamId);
             return View(user);
         }
 
@@ -82,7 +82,7 @@ namespace VacationManager.Controllers
             {
                 return NotFound();
             }
-            ViewData["TeamId"] = new SelectList(_context.Teams, "Id", "Id", user.TeamId);
+            ViewData["TeamId"] = new SelectList(_context.Teams, "Id", "Name", user.TeamId);
             return View(user);
         }
 

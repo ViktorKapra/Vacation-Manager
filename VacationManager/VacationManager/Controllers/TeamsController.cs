@@ -55,7 +55,7 @@ namespace VacationManager.Controllers
         // GET: Teams/Create
         public IActionResult Create()
         {
-            ViewData["ProjectId"] = new SelectList(_context.Projects, "Id", "Id");
+            ViewData["ProjectId"] = new SelectList(_context.Projects, "Id", "Name");
             ViewData["TeamLeaderId"] = new SelectList(_context.Users, "Id", "FirstName");
             return View();
         }
@@ -73,7 +73,7 @@ namespace VacationManager.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["ProjectId"] = new SelectList(_context.Projects, "Id", "Id", team.ProjectId);
+            ViewData["ProjectId"] = new SelectList(_context.Projects, "Id", "Name", team.ProjectId);
             ViewData["TeamLeaderId"] = new SelectList(_context.Users, "Id", "FirstName", team.TeamLeaderId);
             return View(team);
         }
@@ -128,7 +128,7 @@ namespace VacationManager.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["ProjectId"] = new SelectList(_context.Projects, "Id", "Id", team.ProjectId);
+            ViewData["ProjectId"] = new SelectList(_context.Projects, "Id", "Name", team.ProjectId);
             ViewData["TeamLeaderId"] = new SelectList(_context.Users, "Id", "FirstName", team.TeamLeaderId);
             return View(team);
         }
