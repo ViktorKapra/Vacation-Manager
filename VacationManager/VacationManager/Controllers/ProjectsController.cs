@@ -10,23 +10,22 @@ using Data.Entity;
 
 namespace VacationManager.Controllers
 {
-    public class UserController : Controller
+    public class ProjectsController : Controller
     {
         private readonly VacationManagerContext _context;
 
-        public UserController()
+        public ProjectsController()
         {
-            _context = new VacationManagerContext();
+            _context= new VacationManagerContext();
         }
 
-        // GET: User
+        // GET: Projects
         public async Task<IActionResult> Index()
         {
-            var vacationManagerContext = _context.Users.Include(u => u.Team);
-            return View(await vacationManagerContext.ToListAsync());
+            return View(await _context.Projects.ToListAsync());
         }
 
-        // GET: User/Details/5
+        // GET: Projects/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -34,42 +33,39 @@ namespace VacationManager.Controllers
                 return NotFound();
             }
 
-            var user = await _context.Users
-                .Include(u => u.Team)
+            var project = await _context.Projects
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (user == null)
+            if (project == null)
             {
                 return NotFound();
             }
 
-            return View(user);
+            return View(project);
         }
 
-        // GET: User/Create
+        // GET: Projects/Create
         public IActionResult Create()
         {
-            ViewData["TeamId"] = new SelectList(_context.Teams, "Id", "Name");
             return View();
         }
 
-        // POST: User/Create
+        // POST: Projects/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("UserName,Password,FirstName,LastName,TeamId,Id")] User user)
+        public async Task<IActionResult> Create([Bind("Name,Description,Id")] Project project)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(user);
+                _context.Add(project);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["TeamId"] = new SelectList(_context.Teams, "Name", "Id", user.TeamId);
-            return View(user);
+            return View(project);
         }
 
-        // GET: User/Edit/5
+        // GET: Projects/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -77,23 +73,22 @@ namespace VacationManager.Controllers
                 return NotFound();
             }
 
-            var user = await _context.Users.FindAsync(id);
-            if (user == null)
+            var project = await _context.Projects.FindAsync(id);
+            if (project == null)
             {
                 return NotFound();
             }
-            ViewData["TeamId"] = new SelectList(_context.Teams, "Id", "Name", user.TeamId);
-            return View(user);
+            return View(project);
         }
 
-        // POST: User/Edit/5
+        // POST: Projects/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("UserName,Password,FirstName,LastName,TeamId,Id")] User user)
+        public async Task<IActionResult> Edit(int id, [Bind("Name,Description,Id")] Project project)
         {
-            if (id != user.Id)
+            if (id != project.Id)
             {
                 return NotFound();
             }
@@ -102,12 +97,12 @@ namespace VacationManager.Controllers
             {
                 try
                 {
-                    _context.Update(user);
+                    _context.Update(project);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!UserExists(user.Id))
+                    if (!ProjectExists(project.Id))
                     {
                         return NotFound();
                     }
@@ -118,11 +113,10 @@ namespace VacationManager.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["TeamId"] = new SelectList(_context.Teams, "Id", "Name", user.Team.Id);
-            return View(user);
+            return View(project);
         }
 
-        // GET: User/Delete/5
+        // GET: Projects/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -130,31 +124,30 @@ namespace VacationManager.Controllers
                 return NotFound();
             }
 
-            var user = await _context.Users
-                .Include(u => u.Team)
+            var project = await _context.Projects
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (user == null)
+            if (project == null)
             {
                 return NotFound();
             }
 
-            return View(user);
+            return View(project);
         }
 
-        // POST: User/Delete/5
+        // POST: Projects/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var user = await _context.Users.FindAsync(id);
-            _context.Users.Remove(user);
+            var project = await _context.Projects.FindAsync(id);
+            _context.Projects.Remove(project);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool UserExists(int id)
+        private bool ProjectExists(int id)
         {
-            return _context.Users.Any(e => e.Id == id);
+            return _context.Projects.Any(e => e.Id == id);
         }
     }
 }
