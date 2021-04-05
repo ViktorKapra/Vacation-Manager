@@ -9,6 +9,6 @@ namespace Data.Entity
     {
         public virtual ICollection<User> Users {get;set;}
 
-        public virtual RoleEnum Name { get; set; } 
+        public virtual string Name { get; set; } 
     }
 }

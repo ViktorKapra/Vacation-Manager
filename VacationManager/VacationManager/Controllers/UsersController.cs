@@ -10,23 +10,23 @@ using Data.Entity;
 
 namespace VacationManager.Controllers
 {
-    public class UserController : Controller
+    public class UsersController : Controller
     {
         private readonly VacationManagerContext _context;
 
-        public UserController()
+        public UsersController()
         {
             _context = new VacationManagerContext();
         }
 
-        // GET: User
+        // GET: Users
         public async Task<IActionResult> Index()
         {
-            var vacationManagerContext = _context.Users.Include(u => u.Team);
+            var vacationManagerContext = _context.Users.Include(u => u.Role).Include(u => u.Team);
             return View(await vacationManagerContext.ToListAsync());
         }
 
-        // GET: User/Details/5
+        // GET: Users/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -35,6 +35,7 @@ namespace VacationManager.Controllers
             }
 
             var user = await _context.Users
+                .Include(u => u.Role)
                 .Include(u => u.Team)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (user == null)
@@ -45,19 +46,20 @@ namespace VacationManager.Controllers
             return View(user);
         }
 
-        // GET: User/Create
+        // GET: Users/Create
         public IActionResult Create()
         {
+            ViewData["RoleId"] = new SelectList(_context.Roles, "Id", "Name");
             ViewData["TeamId"] = new SelectList(_context.Teams, "Id", "Name");
             return View();
         }
 
-        // POST: User/Create
+        // POST: Users/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("UserName,Password,FirstName,LastName,TeamId,Id")] User user)
+        public async Task<IActionResult> Create([Bind("UserName,Password,FirstName,LastName,RoleId,TeamId,Id")] User user)
         {
             if (ModelState.IsValid)
             {
@@ -65,11 +67,12 @@ namespace VacationManager.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["TeamId"] = new SelectList(_context.Teams, "Name", "Id", user.TeamId);
+            ViewData["RoleId"] = new SelectList(_context.Roles, "Id", "Name", user.RoleId);
+            ViewData["TeamId"] = new SelectList(_context.Teams, "Id", "Name", user.TeamId);
             return View(user);
         }
 
-        // GET: User/Edit/5
+        // GET: Users/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -82,16 +85,17 @@ namespace VacationManager.Controllers
             {
                 return NotFound();
             }
+            ViewData["RoleId"] = new SelectList(_context.Roles, "Id", "Name", user.RoleId);
             ViewData["TeamId"] = new SelectList(_context.Teams, "Id", "Name", user.TeamId);
             return View(user);
         }
 
-        // POST: User/Edit/5
+        // POST: Users/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("UserName,Password,FirstName,LastName,TeamId,Id")] User user)
+        public async Task<IActionResult> Edit(int id, [Bind("UserName,Password,FirstName,LastName,RoleId,TeamId,Id")] User user)
         {
             if (id != user.Id)
             {
@@ -118,11 +122,12 @@ namespace VacationManager.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["TeamId"] = new SelectList(_context.Teams, "Id", "Name", user.Team.Id);
+            ViewData["RoleId"] = new SelectList(_context.Roles, "Id", "Name", user.RoleId);
+            ViewData["TeamId"] = new SelectList(_context.Teams, "Id", "Name", user.TeamId);
             return View(user);
         }
 
-        // GET: User/Delete/5
+        // GET: Users/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -131,6 +136,7 @@ namespace VacationManager.Controllers
             }
 
             var user = await _context.Users
+                .Include(u => u.Role)
                 .Include(u => u.Team)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (user == null)
@@ -141,7 +147,7 @@ namespace VacationManager.Controllers
             return View(user);
         }
 
-        // POST: User/Delete/5
+        // POST: Users/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)

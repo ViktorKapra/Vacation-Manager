@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Data;
 using Data.Entity;
+using System.Data.SqlTypes;
 
 namespace VacationManager.Controllers
 {
@@ -38,11 +39,19 @@ namespace VacationManager.Controllers
                 .Include(t => t.Project)
                 .Include(t => t.TeamLeader)
                 .FirstOrDefaultAsync(m => m.Id == id);
+            List<string> developersNames= new List<string>();
             if (team == null)
             {
                 return NotFound();
             }
-            List<string> developersNames = team.Developers.Select(dev => dev.FirstName).ToList();
+            try
+            {
+                 developersNames = team.Developers.Select(dev => dev.FirstName).ToList();
+            }
+            catch(SqlNullValueException)
+            {
+                developersNames.Add(new string("There is no assigned developers"));
+            }
             if (developersNames != null)
             {
                 ViewBag.DevelopersNames = developersNames; 

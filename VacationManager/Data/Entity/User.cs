@@ -6,7 +6,7 @@ using Data.Entity.TimeOffs;
 
 namespace Data.Entity
 {
-   public class User : BaseEntity
+    public class User : BaseEntity
     {
 
         [MaxLength(100), Required]
@@ -18,6 +18,7 @@ namespace Data.Entity
 
         [MaxLength(100), Required]
         public string LastName { get; set; }
+        public int RoleId{ get; set; }
         public virtual Role Role { get; set; }
         public virtual ICollection<Team> LedTeams { get; set; }
 

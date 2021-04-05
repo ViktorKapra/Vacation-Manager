@@ -88,8 +88,9 @@ namespace VacationManager.Areas.Identity.Pages.Account
                 UserName = user.Email,
                 Password = user.Password,
                 FirstName = Input.FirstName,
-                LastName = Input.LirstName
-            });
+                LastName = Input.LirstName,
+                RoleId = 1
+            }); ;
             _context.SaveChanges();
         }
         public async Task<IActionResult> OnPostAsync(string returnUrl = null)
