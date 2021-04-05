@@ -1,15 +1,26 @@
 ﻿@model IEnumerable<Data.Entity.Team>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Teams";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Index</h1>
+<h1>Teams</h1>
 
 <p>
     <a asp-action="Create">Create New</a>
 </p>
+<style>
+    .table {
+        border-collapse: collapse;
+        margin-top;
+        border: ridge;
+    }
+
+        .table thead {
+            background-color: lightskyblue;
+        }
+</style>
 <table class="table">
     <thead>
         <tr>
