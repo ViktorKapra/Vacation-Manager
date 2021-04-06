@@ -36,10 +36,18 @@
                                     <div class="dropdown-divider"></div>
                                     <a class="dropdown-item" asp-controller="Roles" asp-action="Index">Roles</a>
                                     <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item"asp-controller="Teams" asp-action="Index">Teams</a>
+                                    <a class="dropdown-item" asp-controller="Teams" asp-action="Index">Teams</a>
                                     <div class="dropdown-divider"></div>
                                     <a class="dropdown-item" asp-controller="Users" asp-action="Index">Users</a>
                                     <div class="dropdown-divider"></div>
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle text-dark" data-toggle="dropdown" role="button" aria-haspopup="true" asp-area="" asp-controller="Home" asp-action="HomePage">TimeOffs</a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" asp-controller="TimeOffs" asp-action="Index">My requests</a>
+
                                 </div>
                             </li>
                         }
