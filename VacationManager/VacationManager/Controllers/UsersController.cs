@@ -20,10 +20,47 @@ namespace VacationManager.Controllers
         }
 
         // GET: Users
+       [HttpGet]
         public async Task<IActionResult> Index()
         {
             var vacationManagerContext = _context.Users.Include(u => u.Role).Include(u => u.Team);
             return View(await vacationManagerContext.ToListAsync());
+        }
+       [HttpPost]
+        public async Task<IActionResult> Index(string sortOrder, string searchString)
+        {
+            ViewData["NameSortParm"] = String.IsNullOrEmpty(sortOrder) ? "LastName" : "";
+            ViewData["DateSortParm"] = String.IsNullOrEmpty(sortOrder) ? "FirstName" : "";
+            ViewData["RoleSortParm"] = String.IsNullOrEmpty(sortOrder) ? "RoleName" : "";
+            ViewData["UserNameSortParm"] = String.IsNullOrEmpty(sortOrder) ? "UserName" : "";
+            ViewData["CurrentFilter"] = searchString;
+            var user = from s in _context.Users
+                           select s;
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                user = user.Where(s => s.LastName.Contains(searchString) || s.FirstName.Contains(searchString) || s.Role.Name.Contains(searchString)|| s.UserName.Contains(searchString));
+            }
+            switch (sortOrder)
+            {
+                case "LastName":
+                    user = user.OrderByDescending(s => s.LastName);
+                    break;
+                case "FirstName":
+                    user = user.OrderBy(s => s.FirstName);
+                    break;
+                case "RoleName":
+                    user = user.OrderBy(s => s.Role.Name);
+                    break;
+                case "UserName":
+                    user = user.OrderBy(s => s.UserName);
+                    break;
+
+
+                default:
+                    user = user.OrderBy(s => s.UserName);
+                    break;
+            }
+            return View(await user.ToListAsync());
         }
 
         // GET: Users/Details/5
