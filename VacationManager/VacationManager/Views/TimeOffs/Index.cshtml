@@ -19,9 +19,10 @@
             background-color: lightskyblue;
         }
 </style>
+<p>
+    <a asp-action="CreatePaid">Create New</a>
+</p>
 <table class="table">
-
-
     <thead>
         <tr>
             <th>Last edit</th>
@@ -67,20 +68,10 @@
 
 <h3>Unpaid TimeOffs </h3>
 
-<style>
-    .table {
-        border-collapse: collapse;
-        margin-top;
-        border: ridge;
-    }
-
-        .table thead {
-            background-color: lightskyblue;
-        }
-</style>
+<p>
+    <a asp-action="CreateUnpaid">Create New</a>
+</p>
 <table class="table">
-
-
     <thead>
         <tr>
             <th>Last edit</th>
@@ -112,8 +103,8 @@
                     @item.IsHalfDay
                 </td>
                 <td>
-                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                    <a asp-action="EditUnpaid" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="DeleteUnpaid" asp-route-id="@item.Id">Delete</a>
                 </td>
                 <td></td>
 
@@ -125,17 +116,9 @@
 
 <h3>Sick TimeOffs </h3>
 
-<style>
-    .table {
-        border-collapse: collapse;
-        margin-top;
-        border: ridge;
-    }
-
-        .table thead {
-            background-color: lightskyblue;
-        }
-</style>
+<p>
+    <a asp-action="CreateSick">Create New</a>
+</p>
 <table class="table">
 
 
@@ -166,8 +149,8 @@
                     @item.IsApproved
                 </td>
                 <td>
-                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                    <a asp-action="EditSick" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="DeleteSick" asp-route-id="@item.Id">Delete</a>
                 </td>
                 <td></td>
 
