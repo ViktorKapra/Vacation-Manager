@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Data;
 using Data.Entity;
+using VacationManager.Helpers;
 
 namespace VacationManager.Controllers
 {
@@ -23,6 +24,7 @@ namespace VacationManager.Controllers
         [HttpGet]
         public async Task<IActionResult> Index()
         {
+            ViewBag.UserRole = UserCredentialsHelper.FindUserRole(_context, User);
             return View(await _context.Projects.ToListAsync());
         }
         [HttpPost]
