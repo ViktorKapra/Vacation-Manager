@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using Data;
 using Data.Entity;
 using System.Data.SqlTypes;
+using VacationManager.Helpers;
 
 namespace VacationManager.Controllers
 {
@@ -21,11 +22,40 @@ namespace VacationManager.Controllers
         }
 
         // GET: Teams
+        [HttpGet]
         public async Task<IActionResult> Index()
         {
             var vacationManagerContext = _context.Teams.Include(t => t.Project).Include(t => t.TeamLeader);
+            ViewBag.UserRole = UserCredentialsHelper.FindUserRole(_context, User);
             return View(await vacationManagerContext.ToListAsync());
         }
+        [HttpPost]
+        public async Task<IActionResult> Index(string sortOrder, string searchString)
+        {
+            ViewData["NameSortParm"] = String.IsNullOrEmpty(sortOrder) ? "Name" : "";
+            ViewData["DateSortParm"] = String.IsNullOrEmpty(sortOrder) ? "Project" : "";
+            ViewData["CurrentFilter"] = searchString;
+            var Team = from s in _context.Teams
+                       select s;
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                Team = Team.Where(s => s.Name.Contains(searchString) || s.Project.Name.Contains(searchString));
+            }
+            switch (sortOrder)
+            {
+                case "Name":
+                    Team = Team.OrderByDescending(s => s.Name);
+                    break;
+                case "FirstName":
+                    Team = Team.OrderBy(s => s.Project.Name);
+                    break;
+                default:
+                    Team = Team.OrderBy(s => s.Name);
+                    break;
+            }
+            return View(await Team.ToListAsync());
+        }
+
 
         // GET: Teams/Details/5
         public async Task<IActionResult> Details(int? id)

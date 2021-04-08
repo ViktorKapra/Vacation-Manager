@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Data;
 using Data.Entity;
+using VacationManager.Helpers;
 
 namespace VacationManager.Controllers
 {
@@ -20,11 +21,38 @@ namespace VacationManager.Controllers
         }
 
         // GET: Projects
+        [HttpGet]
         public async Task<IActionResult> Index()
         {
+            ViewBag.UserRole = UserCredentialsHelper.FindUserRole(_context, User);
             return View(await _context.Projects.ToListAsync());
         }
-
+        [HttpPost]
+        public async Task<IActionResult> Index(string sortOrder, string searchString)
+        {
+            ViewData["NameSortParm"] = String.IsNullOrEmpty(sortOrder) ? "Name" : "";
+            ViewData["DateSortParm"] = String.IsNullOrEmpty(sortOrder) ? "Description" : "";
+            ViewData["CurrentFilter"] = searchString;
+            var project = from s in _context.Projects
+                       select s;
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                project = project.Where(s => s.Name.Contains(searchString) || s.Description.Contains(searchString));
+            }
+            switch (sortOrder)
+            {
+                case "Name":
+                    project = project.OrderByDescending(s => s.Name);
+                    break;
+                case "FirstName":
+                    project = project.OrderBy(s => s.Description);
+                    break;
+                default:
+                    project = project.OrderBy(s => s.Name);
+                    break;
+            }
+            return View(await project.ToListAsync());
+        }
         // GET: Projects/Details/5
         public async Task<IActionResult> Details(int? id)
         {

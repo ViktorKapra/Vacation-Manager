@@ -1,0 +1,167 @@
+﻿@model VacationManager.Models.ViewModel.TimeOffs.TimeOffsIndexVM;
+
+@{
+    ViewData["Title"] = "TimeOffs";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>TimeOffs</h1>
+
+<h3>Paid TimeOffs </h3>
+<style>
+    .table {
+        border-collapse: collapse;
+        margin-top;
+        border: ridge;
+    }
+
+        .table thead {
+            background-color: lightskyblue;
+        }
+</style>
+<p>
+    <a asp-action="CreatePaid">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Last edit</th>
+            <th>From</th>
+            <th>To</th>
+            <th>Approved</th>
+            <th>Half day</th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.PaidTimeOffs)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CreationDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StartDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EndDate)
+                </td>
+                <td>
+                    @item.IsApproved
+                </td>
+                <td>
+                    @item.IsHalfDay
+                </td>
+                <td>
+                    @if (item.IsApproved == false) 
+                    {
+                    <a asp-action="EditPaid" asp-route-id="@item.Id">Edit</a> <p> | </p>
+                    < a asp - action = "DeletePaid" asp - route - id = "@item.Id" > Delete </ a >
+                    }
+                </td>
+                <td></td>
+
+            </tr>
+        }
+    </tbody>
+</table>
+<br>
+<br>
+
+<h3>Unpaid TimeOffs </h3>
+
+<p>
+    <a asp-action="CreateUnpaid">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Last edit</th>
+            <th>From</th>
+            <th>To</th>
+            <th>Approved</th>
+            <th>Half day</th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.UnpaidTimeOffs)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CreationDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StartDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EndDate)
+                </td>
+                <td>
+                    @item.IsApproved
+                </td>
+                <td>
+                    @item.IsHalfDay
+                </td>
+                <td>
+                    @if (item.IsApproved == false)
+                    {        <a asp-action="EditUnpaid" asp-route-id="@item.Id">Edit</a><p> |</p>
+                    <a asp-action="DeleteUnpaid" asp-route-id="@item.Id">Delete</a>
+                    }
+                </td>
+                <td></td>
+
+            </tr>
+        }
+    </tbody>
+</table>
+<br><br>
+
+<h3>Sick TimeOffs </h3>
+
+<p>
+    <a asp-action="CreateSick">Create New</a>
+</p>
+<table class="table">
+
+
+    <thead>
+        <tr>
+            <th>Last edit</th>
+            <th>From</th>
+            <th>To</th>
+            <th>Approved</th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.SickTimeOffs)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CreationDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StartDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EndDate)
+                </td>
+                <td>
+                    @item.IsApproved
+                </td>
+                <td>
+                    @if (item.IsApproved == false)
+                    {       <a asp-action="EditSick" asp-route-id="@item.Id">Edit</a><p> |</p>
+                    < a asp - action = "DeleteSick" asp - route - id = "@item.Id" > Delete </ a >
+                               }
+                </td>
+                <td></td>
+
+            </tr>
+        }
+    </tbody>
+</table>
