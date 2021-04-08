@@ -132,25 +132,18 @@ namespace VacationManager.Controllers
             return RedirectToAction("Index");
         }
 
-        // GET: TimeOffsController/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
         // POST: TimeOffsController/Delete/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
-        {
-            try
+
+        public async  Task<ActionResult> DeletePaid(int id)
+        {   
+            var timeOff = await _context.PaidTimeOffs.FindAsync(id);
+            if(timeOff==null)
             {
-                return RedirectToAction(nameof(Index));
+                return NotFound();
             }
-            catch
-            {
-                return View();
-            }
+            _context.PaidTimeOffs.Remove(timeOff);
+            await _context.SaveChangesAsync();
+            return RedirectToAction("Index");
         }
 
         private bool PaidTimeOffExists(int id)
