@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Data;
 using Data.Entity;
+using VacationManager.Helpers;
 
 namespace VacationManager.Controllers
 {
@@ -24,6 +25,8 @@ namespace VacationManager.Controllers
         public async Task<IActionResult> Index()
         {
             var vacationManagerContext = _context.Users.Include(u => u.Role).Include(u => u.Team);
+            ViewBag.UserRole = UserCredentialsHelper.FindUserRole(_context,User);
+
             return View(await vacationManagerContext.ToListAsync());
         }
        [HttpPost]
