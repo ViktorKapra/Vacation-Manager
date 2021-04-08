@@ -7,9 +7,30 @@
 
 <h1>Edit</h1>
 
-<h4>User</h4>
-<hr />
-<div class="row">
+
+<style>
+    .table-bordered {
+        border-collapse: collapse;
+        margin: 25px 0;
+        font-size: 0.9em;
+        font-family: sans-serif;
+        min-width: 400px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+        width: 50%;
+      
+    }
+    #button{
+        width:100px;
+    }
+    #user{
+        
+    }
+</style>
+
+<div style=" margin-top: 0px;-webkit-box-shadow: 10px 10px 22px -5px rgba(0,0,0,0.59);-moz-box-shadow: 10px 10px 22px -5px rgba(0,0,0,0.59);box-shadow: 10px 10px 22px -5px rgba(0,0,0,0.59); height: 700px; margin-right:600px;margin-bottom:5px;">
+   <div  style="background-color:lightskyblue; margin-top:0px; height:35px;" ><h4 style=" margin-left:10px;  font-family: 'Balsamiq Sans', cursive; font-size:22px;" id="user">User</h4> </div>
+    
+    
     <div class="col-md-4">
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -18,6 +39,7 @@
                 <input asp-for="UserName" class="form-control" />
                 <span asp-validation-for="UserName" class="text-danger"></span>
             </div>
+            <div ></div>
             <div class="form-group">
                 <label asp-for="Password" class="control-label"></label>
                 <input asp-for="Password" class="form-control" />
@@ -45,11 +67,14 @@
             </div>
             <input type="hidden" asp-for="Id" />
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+                <div style="margin-left:380px; margin-top:110px;" >
+                    <input  type="submit" value="Save" id="button" class="btn btn-primary" />
+                </div>
             </div>
         </form>
     </div>
 </div>
+
 
 <div>
     <a asp-action="Index">Back to List</a>

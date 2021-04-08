@@ -7,36 +7,42 @@
 
 <h1>Details</h1>
 
-<div>
-    <h4>Team</h4>
-    <hr />
-    <dl class="row">
+<div style="-webkit-box-shadow: 10px 10px 22px -5px rgba(0,0,0,0.59);-moz-box-shadow: 10px 10px 22px -5px rgba(0,0,0,0.59);box-shadow: 10px 10px 22px -5px rgba(0,0,0,0.59); width:600px; height:350px;">
+    <div style="background-color:lightskyblue;font-family: 'Balsamiq Sans', cursive; "><h4>Team</h4></div>
+    <dl>
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Name)
         </dt>
+
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Name)
         </dd>
+
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Project)
         </dt>
+
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Project.Name)
         </dd>
+
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.TeamLeader)
         </dt>
+
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.TeamLeader.FirstName)
-        </dd>       
+        </dd>
+
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Developers)
         </dt>
-        <dd>
-            @String.Join(',', ViewBag.DevelopersNames)       
+        <dd style="margin-left:15px;">
+            @String.Join(',', ViewBag.DevelopersNames)
+        </dd>
     </dl>
 </div>
-<div>
+<div style="margin-top:200px;">
     <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
     <a asp-action="Index">Back to List</a>
 </div>

@@ -6,10 +6,32 @@
 }
 
 <h1>Edit</h1>
+<style>
+    .table-bordered {
+        border-collapse: collapse;
+        margin: 25px 0;
+        font-size: 0.9em;
+        font-family: sans-serif;
+        min-width: 400px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+        width: 50%;
+    }
 
+    #button {
+        width: 100px;
+    }
+
+    #user {
+    }
+    #id{
+        width:600px;
+        height:250px;
+    }
+</style>
 <h4>Role</h4>
-<hr />
-<div class="row">
+<div style=" margin-top: 0px;-webkit-box-shadow: 10px 10px 22px -5px rgba(0,0,0,0.59);-moz-box-shadow: 10px 10px 22px -5px rgba(0,0,0,0.59);box-shadow: 10px 10px 22px -5px rgba(0,0,0,0.59) ;margin-right:500px;margin-bottom:5px;" id="id">
+    <div style="background-color:lightskyblue; margin-top:0px; height:35px;"><h4 style=" margin-left:10px;  font-family: 'Balsamiq Sans', cursive; font-size:22px;" id="user">Role</h4> </div>
+
     <div class="col-md-4">
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -20,7 +42,9 @@
             </div>
             <input type="hidden" asp-for="Id" />
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+                <div style="margin-left:470px; margin-top:90px;">
+                    <input type="submit" value="Save" id="button" class="btn btn-primary" />
+                </div>
             </div>
         </form>
     </div>
