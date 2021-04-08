@@ -14,6 +14,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.AspNetCore.Identity;
 using System.Security.Claims;
 using Microsoft.EntityFrameworkCore;
+using VacationManager.Helpers;
 
 namespace VacationManager.Controllers
 {
@@ -23,14 +24,7 @@ namespace VacationManager.Controllers
         private readonly VacationManagerContext _context;
         private int currentUserId;
 
-        private int FindUserId()
-        {
-            
-            var userEmail = User.FindFirstValue(ClaimTypes.Email);
-            
-            int userId = _context.Users.FirstOrDefault(u => u.UserName == userEmail).Id;
-            return userId;
-        }
+       
         public TimeOffsController()
         { 
             _context = new VacationManagerContext();
@@ -39,7 +33,8 @@ namespace VacationManager.Controllers
         // GET: TimeOffsController
         public ActionResult Index()
         {
-            currentUserId = FindUserId();
+           
+            currentUserId = UserCredentialsHelper.FindUserId(_context,User);
             TimeOffsIndexVM model = new TimeOffsIndexVM();
             model.PaidTimeOffs = _context.PaidTimeOffs.Where(pto=> pto.RequestorId==currentUserId).ToList();
             model.UnpaidTimeOffs = _context.UnpaidTimeOffs.Where(pto => pto.RequestorId == currentUserId).ToList();
@@ -97,7 +92,7 @@ namespace VacationManager.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> EditPaidAsync(int id, [Bind("StartDate,EndDate,IsHalfDay,IsApproved,Id")] PaidTimeOff paidTimeOff)
         {
-            currentUserId = FindUserId();
+            currentUserId = UserCredentialsHelper.FindUserId(_context,User);
             paidTimeOff.Requestor = _context.Users.FirstOrDefault(u => u.Id == currentUserId);
             paidTimeOff.RequestorId = currentUserId;
             paidTimeOff.IsApproved = false;
