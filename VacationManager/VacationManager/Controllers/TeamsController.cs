@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using Data;
 using Data.Entity;
 using System.Data.SqlTypes;
+using VacationManager.Helpers;
 
 namespace VacationManager.Controllers
 {
@@ -25,6 +26,7 @@ namespace VacationManager.Controllers
         public async Task<IActionResult> Index()
         {
             var vacationManagerContext = _context.Teams.Include(t => t.Project).Include(t => t.TeamLeader);
+            ViewBag.UserRole = UserCredentialsHelper.FindUserRole(_context, User);
             return View(await vacationManagerContext.ToListAsync());
         }
         [HttpPost]
