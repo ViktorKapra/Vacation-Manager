@@ -10,6 +10,7 @@ using Data.Entity.TimeOffs;
 using System.Security.Claims;
 using Microsoft.EntityFrameworkCore;
 using VacationManager.Helpers;
+using Data.Entity;
 
 namespace VacationManager.Controllers
 {
@@ -335,6 +336,60 @@ namespace VacationManager.Controllers
         private bool SickTimeOffExists(int id)
         {
             return _context.SickTimeOffs.Any(e => e.Id == id);
+        }
+
+        public ActionResult AllRequests()
+        {
+            currentUserId = UserCredentialsHelper.FindUserId(_context, User);
+           string currentUserRole = UserCredentialsHelper.FindUserRole(_context, User);
+            AllRequestsVM model = new AllRequestsVM();
+            if (currentUserRole == "CEO")
+            {
+                model.PaidTimeOffs = _context.PaidTimeOffs.ToList();
+                model.UnpaidTimeOffs = _context.UnpaidTimeOffs.ToList();
+                model.SickTimeOffs = _context.SickTimeOffs.ToList();
+            }
+            else 
+            {
+                var team = _context.Teams.Where(t => t.TeamLeaderId == currentUserId);
+                if(team!=null)
+                {
+                    var developers = _context.Users.Where(u => u.TeamId == team.First().Id).ToList();
+                    foreach(var developer in developers)
+                    {
+                        model.PaidTimeOffs = _context.PaidTimeOffs.Where(timeoff => timeoff.RequestorId == developer.Id).ToList();
+                        model.UnpaidTimeOffs = _context.UnpaidTimeOffs.Where(timeoff => timeoff.RequestorId == developer.Id).ToList();
+                        model.SickTimeOffs = _context.SickTimeOffs.Where(timeoff => timeoff.RequestorId == developer.Id).ToList();
+                    }
+                } 
+            }
+            return View(model);
+        }
+
+       public async Task<ActionResult> ApprovePaid(int id)
+        {
+            var timeOff = await _context.PaidTimeOffs.FindAsync(id);
+            timeOff.IsApproved = true;
+            _context.Update(timeOff);
+            _context.SaveChanges();
+            return RedirectToAction("AllRequests");
+        }
+        public async Task<ActionResult> ApproveUnpaid(int id)
+        {
+
+            var timeOff = await _context.UnpaidTimeOffs.FindAsync(id);
+            timeOff.IsApproved = true;
+            _context.Update(timeOff);
+            _context.SaveChanges();
+            return RedirectToAction("AllRequests");
+        }
+        public async Task<ActionResult> ApproveSick(int id)
+        {
+            var timeOff = await _context.SickTimeOffs.FindAsync(id);
+            timeOff.IsApproved = true;
+            _context.Update(timeOff);
+            _context.SaveChanges();
+            return RedirectToAction("AllRequests");
         }
     }
 }
