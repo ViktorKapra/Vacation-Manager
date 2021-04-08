@@ -18,5 +18,12 @@ namespace VacationManager.Helpers
             int userId = _context.Users.FirstOrDefault(u => u.UserName == userEmail).Id;
             return userId;
         }
+
+        public static string FindUserRole(VacationManagerContext _context, ClaimsPrincipal User)
+        {
+            var userEmail = User.FindFirstValue(ClaimTypes.Email);
+            string userRole = _context.Users.FirstOrDefault(u => u.UserName == userEmail).Role.Name;
+            return userRole;
+        }
     }
 }
