@@ -54,8 +54,11 @@
                     @item.IsHalfDay
                 </td>
                 <td>
-                    <a asp-action="EditPaid" asp-route-id="@item.Id">Edit</a> |
-                    <a asp-action="DeletePaid" asp-route-id="@item.Id">Delete</a>
+                    @if (item.IsApproved == false) 
+                    {
+                    <a asp-action="EditPaid" asp-route-id="@item.Id">Edit</a> <p> | </p>
+                    < a asp - action = "DeletePaid" asp - route - id = "@item.Id" > Delete </ a >
+                    }
                 </td>
                 <td></td>
 
@@ -103,8 +106,10 @@
                     @item.IsHalfDay
                 </td>
                 <td>
-                    <a asp-action="EditUnpaid" asp-route-id="@item.Id">Edit</a> |
+                    @if (item.IsApproved == false)
+                    {        <a asp-action="EditUnpaid" asp-route-id="@item.Id">Edit</a><p> |</p>
                     <a asp-action="DeleteUnpaid" asp-route-id="@item.Id">Delete</a>
+                    }
                 </td>
                 <td></td>
 
@@ -149,8 +154,10 @@
                     @item.IsApproved
                 </td>
                 <td>
-                    <a asp-action="EditSick" asp-route-id="@item.Id">Edit</a> |
-                    <a asp-action="DeleteSick" asp-route-id="@item.Id">Delete</a>
+                    @if (item.IsApproved == false)
+                    {       <a asp-action="EditSick" asp-route-id="@item.Id">Edit</a><p> |</p>
+                    < a asp - action = "DeleteSick" asp - route - id = "@item.Id" > Delete </ a >
+                               }
                 </td>
                 <td></td>
 
