@@ -8,9 +8,12 @@
 
 <h1>Users</h1>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
+@if (ViewBag.UserRole == "CEO")
+{
+    <p>
+        <a asp-action="Create">Create New</a>
+    </p>
+}
 <form asp-action="Index" method="post">
     <div class="form-actions no-color">
         <p>
@@ -80,13 +83,16 @@
 
                 @if (ViewBag.UserRole == "CEO")
                 {
-                <td>
-                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-                </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                        <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                        <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                    </td>
                 }
-                else{ <td></td> }
+                else
+                {
+                    <td></td>
+}
             </tr>
         }
     </tbody>
