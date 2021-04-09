@@ -7,9 +7,8 @@
 
 <h1>Create</h1>
 
-<h4>Team</h4>
-<hr />
-<div class="row">
+<div style=" margin-top: 0px;-webkit-box-shadow: 10px 10px 22px -5px rgba(0,0,0,0.59);-moz-box-shadow: 10px 10px 22px -5px rgba(0,0,0,0.59);box-shadow: 10px 10px 22px -5px rgba(0,0,0,0.59);height:500px; width:450px ;margin-right:500px;margin-bottom:5px;" id="id">
+    <div style="background-color:lightskyblue; margin-top:0px; height:35px;"><h4 style=" margin-left:10px;  font-family: 'Balsamiq Sans', cursive; font-size:22px;" id="user">Team</h4> </div>
     <div class="col-md-4">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -20,20 +19,20 @@
             </div>
             <div class="form-group">
                 <label asp-for="Project" class="control-label"></label>
-                <select asp-for="ProjectId" class ="form-control" asp-items="ViewBag.ProjectId"></select>
+                <select asp-for="ProjectId" class="form-control" asp-items="ViewBag.ProjectId"></select>
             </div>
             <div class="form-group">
                 <label asp-for="TeamLeader" class="control-label"></label>
-                <select asp-for="TeamLeaderId" class ="form-control" asp-items="ViewBag.TeamLeaderId"></select>
+                <select asp-for="TeamLeaderId" class="form-control" asp-items="ViewBag.TeamLeaderId"></select>
             </div>
-            <div class="form-group">
+            <div style="margin-top:170px;margin-left:350px;" class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 
-<div>
+<div style="margin-top:200px;">
     <a asp-action="Index">Back to List</a>
 </div>
 

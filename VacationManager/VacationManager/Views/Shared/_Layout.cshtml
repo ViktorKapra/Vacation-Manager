@@ -1,6 +1,7 @@
 ﻿
 @inject SignInManager<VacationManagerUser> SignInManager
 @inject UserManager<VacationManagerUser> UserManager
+@namespace VacationManager.Helpers  
 
 <!DOCTYPE html>
 <html lang="en">
@@ -47,7 +48,8 @@
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <div class="dropdown-divider"></div>
                                     <a class="dropdown-item" asp-controller="TimeOffs" asp-action="Index">My requests</a>
-
+                                    @if (UserCredentialsHelper.FindUserRole(User) == "CEO" || UserCredentialsHelper.FindUserRole(User) == "Team Lead")
+                                    { <a class="dropdown-item" asp-controller="TimeOffs" asp-action="AllRequests">All requests</a>}
                                 </div>
                             </li>
                         }

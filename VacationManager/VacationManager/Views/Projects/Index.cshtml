@@ -1,12 +1,26 @@
 ﻿@model IEnumerable<Data.Entity.Project>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Projects";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Index</h1>
+<h1>Projects</h1>
 
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<style>
+    .table {
+        border-collapse: collapse;
+        margin-top;
+        border: ridge;
+    }
+
+        .table thead {
+            background-color: lightskyblue;
+        }
+</style>
 @if (ViewBag.UserRole == "CEO")
 {
     <p>

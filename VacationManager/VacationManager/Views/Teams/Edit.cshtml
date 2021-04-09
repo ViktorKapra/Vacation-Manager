@@ -6,10 +6,28 @@
 }
 
 <h1>Edit</h1>
+<style>
+    .table-bordered {
+        border-collapse: collapse;
+        margin: 25px 0;
+        font-size: 0.9em;
+        font-family: sans-serif;
+        min-width: 400px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+        width: 50%;
+    }
 
-<h4>Team</h4>
-<hr />
-<div class="row">
+    #button {
+        width: 100px;
+    }
+
+    #user {
+    }
+</style>
+
+<div style=" margin-top: 0px;-webkit-box-shadow: 10px 10px 22px -5px rgba(0,0,0,0.59);-moz-box-shadow: 10px 10px 22px -5px rgba(0,0,0,0.59);box-shadow: 10px 10px 22px -5px rgba(0,0,0,0.59); height: 400px; margin-right:600px;margin-bottom:5px;">
+    <div style="background-color:lightskyblue; margin-top:0px; height:35px;"><h4 style=" margin-left:10px;  font-family: 'Balsamiq Sans', cursive; font-size:22px;" id="user">Team</h4> </div>
+
     <div class="col-md-4">
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -25,17 +43,20 @@
            </div>
             <div class="form-group">
                 <label asp-for="TeamLeader.FirstName" class="control-label"></label>
-                <select  asp-for="TeamLeaderId" class="form-control" asp-items="ViewBag.TeamLeaders"></select>
+                <select asp-for="TeamLeaderId" class="form-control" asp-items="ViewBag.TeamLeaders"></select>
             </div>
             <input type="hidden" asp-for="Id" />
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+                <div style="margin-left:380px; margin-top:70px;">
+                    <input type="submit" value="Save" id="button" class="btn btn-primary" />
+
+                </div>
             </div>
         </form>
     </div>
 </div>
 
-<div>
+<div style="margin-top:300px;">
     <a asp-action="Index">Back to List</a>
 </div>
 

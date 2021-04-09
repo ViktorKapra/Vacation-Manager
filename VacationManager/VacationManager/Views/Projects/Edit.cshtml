@@ -7,9 +7,9 @@
 
 <h1>Edit</h1>
 
-<h4>Project</h4>
-<hr />
-<div class="row">
+
+<div style=" margin-top: 0px;-webkit-box-shadow: 10px 10px 22px -5px rgba(0,0,0,0.59);-moz-box-shadow: 10px 10px 22px -5px rgba(0,0,0,0.59);box-shadow: 10px 10px 22px -5px rgba(0,0,0,0.59); height:400px;width:450px;margin-right:500px;margin-bottom:5px;" id="id">
+    <div style="background-color:lightskyblue; margin-top:0px; height:35px;"><h4 style=" margin-left:10px;  font-family: 'Balsamiq Sans', cursive; font-size:22px;" id="user">Project</h4> </div>
     <div class="col-md-4">
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -24,14 +24,14 @@
                 <span asp-validation-for="Description" class="text-danger"></span>
             </div>
             <input type="hidden" asp-for="Id" />
-            <div class="form-group">
+            <div style="margin-top:155px;margin-left:360px;" class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 
-<div>
+<div style="margin-top:200px;">
     <a asp-action="Index">Back to List</a>
 </div>
 

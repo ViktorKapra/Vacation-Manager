@@ -6,50 +6,61 @@
 }
 
 <h1>Details</h1>
+<style>
+  
+</style>
+<div style="-webkit-box-shadow: 10px 10px 22px -5px rgba(0,0,0,0.59);-moz-box-shadow: 10px 10px 22px -5px rgba(0,0,0,0.59);box-shadow: 10px 10px 22px -5px rgba(0,0,0,0.59); width:450px; height:400px;">
+    <div style="background-color:lightskyblue;font-family: 'Balsamiq Sans', cursive;" ><h4>User</h4></div>
+    <dl>
 
-<div>
-    <h4>User</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.UserName)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.UserName)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Password)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Password)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.FirstName)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.FirstName)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.LastName)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.LastName)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Role)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Role.Name)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Team)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Team.Name)
-        </dd>
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.UserName)
+    </dt>
+
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.UserName)
+    </dd>
+    
+    <dt  class="col-sm-2">
+        @Html.DisplayNameFor(model => model.Password)
+    </dt>
+
+    <dd  class="col-sm-10">
+        @Html.DisplayFor(model => model.Password)
+    </dd>
+
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.FirstName)
+    </dt>
+
+    <dd  class="col-sm-10">
+        @Html.DisplayFor(model => model.FirstName)
+    </dd>
+
+    <dt  class="col-sm-2">
+        @Html.DisplayNameFor(model => model.LastName)
+    </dt>
+
+    <dd  class="col-sm-10">
+        @Html.DisplayFor(model => model.LastName)
+    </dd>
+
+    <dt  class="col-sm-2">
+        @Html.DisplayNameFor(model => model.Role)
+    </dt>
+
+    <dd  class="col-sm-10">
+        @Html.DisplayFor(model => model.Role.Name)
+    </dd>
+    <dt  class="col-sm-2">
+        @Html.DisplayNameFor(model => model.Team)
+    </dt>
+    <dd  class="col-sm-10">
+        @Html.DisplayFor(model => model.Team.Name)
+    </dd>
     </dl>
 </div>
-<div>
+<div style="margin-top:200px;">
     <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
     <a asp-action="Index">Back to List</a>
 </div>
