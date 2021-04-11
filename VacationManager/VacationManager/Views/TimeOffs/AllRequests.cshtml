@@ -1,4 +1,4 @@
-﻿@model VacationManager.Models.ViewModel.TimeOffs.AllRequestsVM
+﻿@model VacationManager.Models.ViewModel.TimeOffs.AllRequestsVM 
 @{
     ViewData["Title"] = "AllRequests";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -26,6 +26,7 @@
             <th>To</th>
             <th>Approved</th>
             <th>Half day</th>
+            <th>Requestor</th>
             <th></th>
             <th></th>
         </tr>
@@ -33,29 +34,32 @@
     <tbody>
         @foreach (var item in Model.PaidTimeOffs)
         {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.CreationDate)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.StartDate)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.EndDate)
-                </td>
-                <td>
-                    @item.IsApproved
-                </td>
-                <td>
-                    @item.IsHalfDay
-                </td>
-                <td>
-                    <a asp-action="ApprovePaid" asp-route-id="@item.Id">Approve</a> |
-                    <a asp-action="DeletePaid" asp-route-id="@item.Id">Delete</a>
-                </td>
-                <td></td>
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreationDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StartDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EndDate)
+            </td>
+            <td>
+                @item.IsApproved
+            </td>
+            <td>
+                @item.IsHalfDay
+            </td>
+            <td>
+                @item.Requestor.FirstName
+            </td>
+            <td>
+                <a asp-action="ApprovePaid" asp-route-id="@item.Id">Approve</a> |
+                <a asp-action="DeletePaid" asp-route-id="@item.Id">Delete</a>
+            </td>
+            <td></td>
 
-            </tr>
+        </tr>
         }
     </tbody>
 </table>
@@ -72,6 +76,7 @@
             <th>To</th>
             <th>Approved</th>
             <th>Half day</th>
+            <th>Requestor</th>
             <th></th>
             <th></th>
         </tr>
@@ -79,29 +84,32 @@
     <tbody>
         @foreach (var item in Model.UnpaidTimeOffs)
         {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.CreationDate)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.StartDate)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.EndDate)
-                </td>
-                <td>
-                    @item.IsApproved
-                </td>
-                <td>
-                    @item.IsHalfDay
-                </td>
-                <td>
-                    <a asp-action="ApproveUnpaid" asp-route-id="@item.Id">Approve</a> |
-                    <a asp-action="DeleteUnpaid" asp-route-id="@item.Id">Delete</a>
-                </td>
-                <td></td>
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreationDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StartDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EndDate)
+            </td>
+            <td>
+                @item.IsApproved
+            </td>
+            <td>
+                @item.IsHalfDay
+            </td>
+            <td>
+                @item.Requestor.FirstName
+            </td>
+            <td>
+                <a asp-action="ApproveUnpaid" asp-route-id="@item.Id">Approve</a> |
+                <a asp-action="DeleteUnpaid" asp-route-id="@item.Id">Delete</a>
+            </td>
+            <td></td>
 
-            </tr>
+        </tr>
         }
     </tbody>
 </table>
@@ -119,6 +127,7 @@
             <th>From</th>
             <th>To</th>
             <th>Approved</th>
+            <th>Requestor</th>
             <th></th>
             <th></th>
         </tr>
@@ -126,26 +135,29 @@
     <tbody>
         @foreach (var item in Model.SickTimeOffs)
         {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.CreationDate)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.StartDate)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.EndDate)
-                </td>
-                <td>
-                    @item.IsApproved
-                </td>
-                <td>
-                    <a asp-action="ApproveSick" asp-route-id="@item.Id">Approve</a> |
-                    <a asp-action="DeleteSick" asp-route-id="@item.Id">Delete</a>
-                </td>
-                <td></td>
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreationDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StartDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EndDate)
+            </td>
+            <td>
+                @item.IsApproved
+            </td>
+            <td>
+                @item.Requestor.FirstName
+            </td>
+            <td>
+                <a asp-action="ApproveSick" asp-route-id="@item.Id">Approve</a> |
+                <a asp-action="DeleteSick" asp-route-id="@item.Id">Delete</a>
+            </td>
+            <td></td>
 
-            </tr>
+        </tr>
         }
     </tbody>
 </table>

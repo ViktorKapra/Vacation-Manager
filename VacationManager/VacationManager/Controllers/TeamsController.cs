@@ -9,9 +9,11 @@ using Data;
 using Data.Entity;
 using System.Data.SqlTypes;
 using VacationManager.Helpers;
+using Microsoft.AspNetCore.Authorization;
 
 namespace VacationManager.Controllers
 {
+    [Authorize]
     public class TeamsController : Controller
     {
         private readonly VacationManagerContext _context;

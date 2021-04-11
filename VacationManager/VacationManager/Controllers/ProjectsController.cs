@@ -8,9 +8,11 @@ using Microsoft.EntityFrameworkCore;
 using Data;
 using Data.Entity;
 using VacationManager.Helpers;
+using Microsoft.AspNetCore.Authorization;
 
 namespace VacationManager.Controllers
 {
+    [Authorize]
     public class ProjectsController : Controller
     {
         private readonly VacationManagerContext _context;

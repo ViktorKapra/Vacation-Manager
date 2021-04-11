@@ -11,9 +11,11 @@ using System.Security.Claims;
 using Microsoft.EntityFrameworkCore;
 using VacationManager.Helpers;
 using Data.Entity;
+using Microsoft.AspNetCore.Authorization;
 
 namespace VacationManager.Controllers
 {
+    [Authorize]
     public class TimeOffsController : Controller
     {
 
@@ -343,26 +345,41 @@ namespace VacationManager.Controllers
             currentUserId = UserCredentialsHelper.FindUserId(_context, User);
            string currentUserRole = UserCredentialsHelper.FindUserRole(_context, User);
             AllRequestsVM model = new AllRequestsVM();
+            model.PaidTimeOffs = new List<PaidTimeOff>();
+            model.UnpaidTimeOffs = new List<UnpaidTimeOff>();
+            model.SickTimeOffs = new List<SickTimeOff>();
             if (currentUserRole == "CEO")
             {
                 model.PaidTimeOffs = _context.PaidTimeOffs.ToList();
                 model.UnpaidTimeOffs = _context.UnpaidTimeOffs.ToList();
                 model.SickTimeOffs = _context.SickTimeOffs.ToList();
             }
-            else 
+             if(currentUserRole=="Team Lead")
             {
-                var team = _context.Teams.Where(t => t.TeamLeaderId == currentUserId);
+                var team = _context.Teams.Where(t => t.TeamLeaderId == currentUserId).FirstOrDefault();
                 if(team!=null)
                 {
-                    var developers = _context.Users.Where(u => u.TeamId == team.First().Id).ToList();
-                    foreach(var developer in developers)
+                    var developers =  _context.Users.Where(u => u.TeamId == team.Id).ToList();
+                    if (developers.Count > 0)
                     {
-                        model.PaidTimeOffs = _context.PaidTimeOffs.Where(timeoff => timeoff.RequestorId == developer.Id).ToList();
-                        model.UnpaidTimeOffs = _context.UnpaidTimeOffs.Where(timeoff => timeoff.RequestorId == developer.Id).ToList();
-                        model.SickTimeOffs = _context.SickTimeOffs.Where(timeoff => timeoff.RequestorId == developer.Id).ToList();
+
+                        foreach (var developer in developers)
+                        {
+                            model.PaidTimeOffs.AddRange(_context.PaidTimeOffs.Where(timeoff => timeoff.RequestorId == developer.Id).ToList());
+                            model.UnpaidTimeOffs.AddRange(_context.UnpaidTimeOffs.Where(timeoff => timeoff.RequestorId == developer.Id).ToList());
+                            model.SickTimeOffs.AddRange( _context.SickTimeOffs.Where(timeoff => timeoff.RequestorId == developer.Id).ToList());
+                        }
+
                     }
-                } 
+
+                }
+                else
+                {
+                    throw new Exception("Teams is null");
+                }
+               
             }
+            
             return View(model);
         }
 

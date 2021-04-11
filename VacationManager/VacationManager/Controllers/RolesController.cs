@@ -7,9 +7,12 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Data;
 using Data.Entity;
+using Microsoft.AspNetCore.Authorization;
+using VacationManager.Helpers;
 
 namespace VacationManager.Controllers
 {
+    [Authorize]
     public class RolesController : Controller
     {
         private readonly VacationManagerContext _context;
@@ -22,6 +25,7 @@ namespace VacationManager.Controllers
         // GET: Roles
         public async Task<IActionResult> Index()
         {
+            ViewBag.UserRole= UserCredentialsHelper.FindUserRole(_context, User);
             return View(await _context.Roles.ToListAsync());
         }
 
